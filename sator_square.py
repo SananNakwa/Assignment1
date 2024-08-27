@@ -1,12 +1,15 @@
 def is_sator_square(tablet):
-     N = len(tablet[0])
-     for index,word in enumerate(tablet):
+    N = len(tablet[0])
+    
+    for index,word in enumerate(tablet):
         if word!= [tablet[i][index] for i in range(N)]:
+            # compare the word with top to down version of the word
             return False
         if word != list(reversed(tablet[N-index-1])):
+            # compare the word with right to left version of the word
             return False
         if word != [tablet[N-index-1][-i] for i in range(1,N+1)]:
-            print(word)
+            # compare the word with bottom to top version of the word
             return False
      return True
 
